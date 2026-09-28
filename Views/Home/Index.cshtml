@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <h1>Discover Your Perfect Space</h1>
+        <p>Explore our curated collection of modern and classic furniture to transform your home.</p>
+        <a href="#shop" class="btn-primary">Shop Now</a>
+    </div>
+</section>
+
+<section id="shop" class="products-section">
+    <h2>Featured Products</h2>
+    <p>Browse our exclusive selection of high-quality furniture.</p>
+    
+    <div class="search-filter-container">
+        <button id="filter-toggle" class="filter-toggle"><i class="fa-solid fa-bars"></i> Filters</button>
+        <aside id="filter-sidebar">
+            <div id="filter-section">
+                <div class="filter-section-header">
+                    <h3>Filter Products</h3>
+                    <button id="close-filter" class="close-filter-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <hr>
+                <div class="filter-group" id="category-filters"></div>
+                <div class="filter-group" id="price-range">
+                    <input type="number" id="min-price" placeholder="Min Price">
+                    <input type="number" id="max-price" placeholder="Max Price">
+                </div>
+                <button id="apply-filters">Apply Filters</button>
+            </div>
+        </aside>
+        <div class="search">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for products..." />
+                <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    </div>
+
+    <div class="products" id="product-list"></div>
+
+    <div class="pagination" id="pagination">
+        <button class="page-button" id="prev-page" disabled>Previous</button>
+        <span id="page-info">Page 1 of 1</span>
+        <button class="page-button" id="next-page">Next</button>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <div class="about-container">
+        <div class="about-text">
+            <p>Welcome to Modern Furniture Store, your one-stop destination for high-quality furniture.</p>
+            <p>Our mission is to provide the best selection of modern and classic pieces.</p>
+        </div>
+        <div class="about-image">
+            <img src="~/images/b8.jpg" alt="About Us" />
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-container">
+        <div class="testimonial-card"><p>"I love my new sofa!"</p><h3>- Sarah J.</h3></div>
+        <div class="testimonial-card"><p>"The quality is outstanding."</p><h3>- Mark T.</h3></div>
+        <div class="testimonial-card"><p>"Great customer service!"</p><h3>- Emily R.</h3></div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: modernf@gmail.com</p>
+    <p>Phone: +1 (234) 567-890</p>
+    <p>Address: 123 Modern St, Furniture City</p>
+</section>
+
+<section class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Stay updated with the latest furniture trends.</p>
+    <form id="newsletter-form">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit" class="btn-primary">Subscribe</button>
+    </form>
+</section>

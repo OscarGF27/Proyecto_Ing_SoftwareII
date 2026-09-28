@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Furniture Store</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/producto.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+            <h1 style="margin:0; font-size:1.5rem;">Furniture Store</h1>
+            <div>
+                <a href="#" id="cart-icon" style="color:var(--accent-color); font-size:1.3rem; text-decoration:none;">
+                    <i class="fas fa-shopping-cart"></i> <span id="cart-count">(0)</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- CART -->
+    <div id="cart" class="cart">
+        <div class="cart-header">
+            <h2>Tu Carrito</h2>
+            <button id="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items"></div>
+        <div id="cart-total" class="cart-total"></div>
+        <button id="checkout-button" class="checkout-button" style="margin-top:15px;">Checkout</button>
+    </div>
+
+    <!-- FILTER -->
+    <div id="filter-sidebar">
+        <div id="filter-section">
+            <div class="filter-section-header">
+                <h3>Filtros</h3>
+                <button class="close-filter-btn" id="close-filter">&times;</button>
+            </div>
+            <hr />
+            <div id="category-filters" class="filter-group"></div>
+            <div class="filter-group">
+                <h4>Precio</h4>
+                <div id="price-range">
+                    <input type="number" id="min-price" placeholder="Min" />
+                    <input type="number" id="max-price" placeholder="Max" />
+                </div>
+            </div>
+            <button id="apply-filters">Aplicar</button>
+        </div>
+    </div>
+
+    <!-- PRODUCT MODAL -->
+    <div id="product-modal" class="product-modal">
+        <div class="product-modal-content">
+            <div class="product-modal-header">
+                <h2 id="modal-product-title">Producto</h2>
+                <button class="close-product-modal">&times;</button>
+            </div>
+            <div class="product-modal-body">
+                <img id="modal-product-image" src="" alt="producto" />
+                <p id="modal-product-price" class="price"></p>
+                <p id="modal-product-description" class="description"></p>
+            </div>
+            <div class="product-modal-footer">
+                <button class="close-product-modal">Cerrar</button>
+                <button id="modal-add-to-cart" class="btn-secondary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="alert" class="alert"></div>
+
+    <footer>
+        <div class="footer-container">
+            <div>
+                <h3>Furniture Store</h3>
+                <p>Muebles modernos para tu hogar</p>
+            </div>
+            <div>
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="footer-bottom">
+            &copy; 2026 Furniture Store
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        document.getElementById('mobile-menu')?.addEventListener('click', () => {
+            document.querySelector('.nav-links')?.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
