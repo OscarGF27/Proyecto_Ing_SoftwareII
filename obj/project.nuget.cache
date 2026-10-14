@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9vtDOek3Zb0=",
+  "dgSpecHash": "VsGIC5LtDJ4=",
   "success": true,
-  "projectFilePath": "c:\\Users\\sebas\\Desktop\\web-muebles2.0\\Proyecto_Ing_SoftwareII\\Inmueble.csproj",
+  "projectFilePath": "C:\\Users\\sebas\\Desktop\\web-muebles2.0\\Proyecto_Ing_SoftwareII\\Inmueble.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sebas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\sebas\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\10.0.11\\microsoft.aspnetcore.diagnostics.entityframeworkcore.10.0.11.nupkg.sha512",
