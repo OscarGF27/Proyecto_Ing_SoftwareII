@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Inmueble")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86e9e45eae88e0b87fdc8a878586e112ae8862a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b52879ebfa0fc01ae57ee97b8c9f99c38c94227")]
 [assembly: System.Reflection.AssemblyProductAttribute("Inmueble")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Inmueble")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
