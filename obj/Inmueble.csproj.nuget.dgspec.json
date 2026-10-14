@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\inver\\Inmueble\\Inmueble.csproj": {}
+    "C:\\Users\\sebas\\Desktop\\web-muebles2.0\\Proyecto_Ing_SoftwareII\\Inmueble.csproj": {}
   },
   "projects": {
-    "C:\\Users\\inver\\Inmueble\\Inmueble.csproj": {
+    "C:\\Users\\sebas\\Desktop\\web-muebles2.0\\Proyecto_Ing_SoftwareII\\Inmueble.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\inver\\Inmueble\\Inmueble.csproj",
+        "projectUniqueName": "C:\\Users\\sebas\\Desktop\\web-muebles2.0\\Proyecto_Ing_SoftwareII\\Inmueble.csproj",
         "projectName": "Inmueble",
-        "projectPath": "C:\\Users\\inver\\Inmueble\\Inmueble.csproj",
-        "packagesPath": "C:\\Users\\inver\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\inver\\Inmueble\\obj\\",
+        "projectPath": "C:\\Users\\sebas\\Desktop\\web-muebles2.0\\Proyecto_Ing_SoftwareII\\Inmueble.csproj",
+        "packagesPath": "C:\\Users\\sebas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sebas\\Desktop\\web-muebles2.0\\Proyecto_Ing_SoftwareII\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\inver\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sebas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.303/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
