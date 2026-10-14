@@ -1,0 +1,79 @@
+/* ===== PANEL ADMINISTRATIVO (usa las variables de main.css) ===== */
+.admin { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+
+.side {
+  background: linear-gradient(160deg, #245a49, #10281f);
+  color: #fff; padding: 28px 20px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 28px;
+  position: sticky; top: 0; height: 100vh;
+}
+.side .logo { font-size: 1.4rem; }
+.side-nav { display: flex; flex-direction: column; gap: 6px; flex: 1; margin-top: 8px; }
+.side-nav a { padding: 11px 14px; border-radius: 10px; font-size: .93rem; font-weight: 500; color: #d6e4dd; transition: .2s; }
+.side-nav a:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.side-nav a.active { background: rgba(255, 255, 255, .15); color: #fff; font-weight: 600; }
+.side-user { display: grid; gap: 2px; font-size: .88rem; }
+.side-user small { color: #a9c1b6; margin-bottom: 10px; }
+.side .btn-ghost { border-color: rgba(255, 255, 255, .4); color: #fff; }
+.side .btn-ghost:hover { background: #fff; color: var(--ink); }
+
+.admin-main { padding: 36px 40px 60px; min-width: 0; }
+.admin-head { margin-bottom: 28px; }
+.admin-head h1 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 28px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; border-left: 3px solid var(--accent); }
+.kpi span { display: block; font-size: .8rem; color: var(--muted); }
+.kpi strong { font-size: 1.35rem; font-weight: 600; }
+.kpi.good strong { color: var(--brand); }
+.kpi.bad strong { color: var(--error); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-bottom: 28px; }
+.panel h2 { font-size: 1.3rem; margin-bottom: 18px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.panel-head h2 { margin: 0; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+select {
+  width: 100%; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px;
+  font: inherit; font-size: .95rem; background: var(--surface); transition: .2s;
+}
+select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 4px rgba(31, 77, 63, .12); }
+
+.item-row { display: grid; grid-template-columns: 1fr 90px 160px 36px; gap: 10px; align-items: center; margin-bottom: 10px; }
+.totals { margin-left: auto; width: min(320px, 100%); }
+.totals .summary-row:last-child { border-bottom: 0; }
+.form-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+.tbl-wrap { overflow-x: auto; }
+.tbl { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.tbl th { text-align: left; padding: 12px; border-bottom: 2px solid var(--line); font-size: .8rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
+.tbl td { padding: 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.tbl .num { text-align: right; white-space: nowrap; }
+.tbl .acts { white-space: nowrap; text-align: right; }
+.tbl-empty { text-align: center; color: var(--muted); padding: 32px 12px !important; }
+
+.badge { display: inline-block; padding: 3px 11px; border-radius: 99px; font-size: .75rem; font-weight: 600; }
+.badge.pagada, .badge.ingreso { background: #e3f1ea; color: var(--brand); }
+.badge.pendiente { background: #fbf0dc; color: #8a5a12; }
+.badge.egreso { background: #f8e3e1; color: var(--error); }
+
+.link-btn { border: 0; background: none; cursor: pointer; font: 600 .82rem 'Inter', sans-serif; color: var(--brand); padding: 6px 8px; }
+.link-btn:hover { text-decoration: underline; }
+.link-btn.danger { color: var(--error); }
+
+@media (max-width: 900px) {
+  .admin { grid-template-columns: 1fr; }
+  .side { position: static; height: auto; gap: 16px; }
+  .side-nav { flex-direction: row; flex-wrap: wrap; }
+  .admin-main { padding: 28px 5% 48px; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .item-row { grid-template-columns: 1fr 1fr 36px; }
+  .item-row .i-desc { grid-column: 1 / -1; }
+  .kpis { grid-template-columns: 1fr; }
+}

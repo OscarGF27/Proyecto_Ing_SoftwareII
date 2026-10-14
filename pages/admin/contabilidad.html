@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contabilidad | Modern Furniture Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="admin">
+    <!-- SIDEBAR -->
+    <aside class="side">
+      <a href="/pages/home/index.html" class="logo">Modern<span>.</span>Furniture</a>
+      <div class="side-nav">
+        <a href="/pages/admin/facturacion.html">Facturación</a>
+        <a href="/pages/admin/contabilidad.html" class="active">Contabilidad</a>
+        <a href="/pages/home/index.html">Ver tienda</a>
+      </div>
+      <div class="side-user">
+        <strong id="userName"></strong>
+        <small>Rol: Administrativo</small>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn" type="button">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main class="admin-main">
+      <div class="admin-head">
+        <span class="eyebrow">Administración</span>
+        <h1>Contabilidad</h1>
+      </div>
+
+      <section class="kpis">
+        <div class="kpi good"><span>Ingresos</span><strong id="kIn">$0</strong></div>
+        <div class="kpi bad"><span>Egresos</span><strong id="kOut">$0</strong></div>
+        <div class="kpi"><span>Utilidad</span><strong id="kNet">$0</strong></div>
+        <div class="kpi"><span>IVA por pagar</span><strong id="kIva">$0</strong></div>
+      </section>
+
+      <!-- NUEVO MOVIMIENTO -->
+      <section class="panel">
+        <h2>Registrar movimiento</h2>
+        <form class="form" id="entForm" novalidate>
+          <div class="grid-3">
+            <div class="field"><label for="eDate">Fecha</label><input id="eDate" type="date" required></div>
+            <div class="field"><label for="eType">Tipo</label>
+              <select id="eType"><option value="egreso">Egreso</option><option value="ingreso">Ingreso</option></select></div>
+            <div class="field"><label for="eCat">Categoría</label>
+              <select id="eCat"><option>Arriendo</option><option>Servicios</option><option>Nómina</option><option>Proveedores</option><option>Impuestos</option><option>Otros</option></select></div>
+          </div>
+          <div class="grid-2">
+            <div class="field"><label for="eConcept">Concepto</label><input id="eConcept" placeholder="Ej. Pago arriendo bodega" required></div>
+            <div class="field"><label for="eAmount">Valor (COP)</label><input id="eAmount" type="number" min="1" placeholder="0" required></div>
+          </div>
+          <p class="form-error" id="entError" role="alert"></p>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Guardar movimiento</button></div>
+        </form>
+      </section>
+
+      <!-- LIBRO DE MOVIMIENTOS -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Libro de movimientos</h2>
+          <div class="filters" id="filters">
+            <button class="chip active" data-f="todos">Todos</button>
+            <button class="chip" data-f="ingreso">Ingresos</button>
+            <button class="chip" data-f="egreso">Egresos</button>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>Fecha</th><th>Concepto</th><th>Categoría</th><th>Tipo</th><th class="num">Valor</th><th></th></tr></thead>
+            <tbody id="entBody"></tbody>
+          </table>
+        </div>
+        <p class="small-text muted" style="margin-top:14px">Los ingresos por facturas se calculan sobre la base (sin IVA) y solo cuentan las facturas pagadas. El IVA cobrado se muestra aparte como IVA por pagar.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/core/config.js"></script>
+  <script src="/js/core/auth.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="/js/admin/contabilidad.js"></script>
+</body>
+</html>

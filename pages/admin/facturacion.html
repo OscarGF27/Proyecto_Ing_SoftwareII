@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Facturación | Modern Furniture Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="admin">
+    <!-- SIDEBAR -->
+    <aside class="side">
+      <a href="/pages/home/index.html" class="logo">Modern<span>.</span>Furniture</a>
+      <div class="side-nav">
+        <a href="/pages/admin/facturacion.html" class="active">Facturación</a>
+        <a href="/pages/admin/contabilidad.html">Contabilidad</a>
+        <a href="/pages/home/index.html">Ver tienda</a>
+      </div>
+      <div class="side-user">
+        <strong id="userName"></strong>
+        <small>Rol: Administrativo</small>
+        <button class="btn btn-ghost btn-sm" id="logoutBtn" type="button">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main class="admin-main">
+      <div class="admin-head">
+        <span class="eyebrow">Administración</span>
+        <h1>Facturación</h1>
+      </div>
+
+      <section class="kpis">
+        <div class="kpi"><span>Total facturado</span><strong id="kTotal">$0</strong></div>
+        <div class="kpi good"><span>Cobrado</span><strong id="kPaid">$0</strong></div>
+        <div class="kpi bad"><span>Por cobrar</span><strong id="kPend">$0</strong></div>
+        <div class="kpi"><span>Facturas emitidas</span><strong id="kCount">0</strong></div>
+      </section>
+
+      <!-- NUEVA FACTURA -->
+      <section class="panel">
+        <h2>Nueva factura</h2>
+        <form class="form" id="invForm" novalidate>
+          <div class="grid-3">
+            <div class="field"><label for="client">Cliente</label><input id="client" placeholder="Nombre o razón social" required></div>
+            <div class="field"><label for="doc">NIT / Cédula</label><input id="doc" placeholder="900123456-1" required></div>
+            <div class="field"><label for="date">Fecha</label><input id="date" type="date" required></div>
+          </div>
+          <div class="field" style="max-width:260px">
+            <label for="status">Estado</label>
+            <select id="status"><option value="pendiente">Pendiente de pago</option><option value="pagada">Pagada</option></select>
+          </div>
+
+          <div class="field"><label>Ítems</label><div id="items"></div></div>
+          <button type="button" class="btn btn-ghost btn-sm" id="addItem" style="justify-self:start">+ Agregar ítem</button>
+
+          <div class="totals">
+            <div class="summary-row"><span>Subtotal</span><span id="tSub">$0</span></div>
+            <div class="summary-row"><span>IVA (19%)</span><span id="tIva">$0</span></div>
+            <div class="summary-row total"><span>Total</span><span id="tTotal">$0</span></div>
+          </div>
+
+          <p class="form-error" id="invError" role="alert"></p>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Emitir factura</button></div>
+        </form>
+      </section>
+
+      <!-- LISTADO -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Facturas</h2>
+          <div class="filters" id="filters">
+            <button class="chip active" data-f="todas">Todas</button>
+            <button class="chip" data-f="pendiente">Pendientes</button>
+            <button class="chip" data-f="pagada">Pagadas</button>
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>N°</th><th>Cliente</th><th>Fecha</th><th class="num">Total</th><th>Estado</th><th></th></tr></thead>
+            <tbody id="invBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/core/config.js"></script>
+  <script src="/js/core/auth.js"></script>
+  <script src="/js/admin/admin.js"></script>
+  <script src="/js/admin/facturacion.js"></script>
+</body>
+</html>
