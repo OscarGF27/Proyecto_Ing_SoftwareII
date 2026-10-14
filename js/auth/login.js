@@ -79,7 +79,7 @@
       MF.save(MF.KEYS.session, { name: user.name, email: user.email, role: user.role, ts: Date.now() });
       const next = new URLSearchParams(location.search).get('next');
       const safe = next && next.startsWith('/') && !next.startsWith('//');
-      location.href = user.role === 'admin' && safe ? next : home(user.role);
+      location.href = safe ? next : home(user.role);
     } finally { btn.disabled = false; }
   });
 })();

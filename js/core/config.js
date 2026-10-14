@@ -3,6 +3,7 @@ window.MF = {
   KEYS: { session: 'mf_session', users: 'mf_users', invoices: 'mf_invoices', seq: 'mf_invoice_seq', entries: 'mf_entries' },
   ROUTES: { home: '/pages/home/index.html', login: '/pages/auth/login.html', cart: '/pages/cart/cart.html', admin: '/pages/admin/facturacion.html' },
   IVA: 0.19,
+  WHATSAPP: '573000000000', // cambia por tu número (con indicativo, sin +)
   load(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v ?? d; } catch { return d; } },
   save(k, v) { localStorage.setItem(k, JSON.stringify(v)); },
   money(n) { return new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(n || 0); },
